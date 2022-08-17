@@ -1,0 +1,52 @@
+<div  id="nuevaCategoria" class="modal">
+  <clase div="diálogo-modal">
+    <clase div="contenido-modal">
+      
+      <clase div="encabezado-modal">
+        <h5 class="modal-title" id="exampleModalLabel">Nuevo Producto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+      
+      <div  class="cuerpo-modal">
+        
+        <div clase="fila">
+            <clase div="col-12">
+              <etiqueta  para="txtCodigo" class="formulario-etiqueta"> Codigo </etiqueta>
+              <tipo de entrada="texto" clase="formulario-control" id="txtCodigo" placeholder="Ingrese codigo">
+            </div>
+            <clase div="col-12">
+              <etiqueta  para="txtNombre" class="formulario-etiqueta"> Nombre </etiqueta>
+              <tipo de entrada="texto" clase="formulario-control" id="txtNombre" placeholder="Ingrese nombre">
+            </div>
+        </div>
+
+
+      </div>
+      
+      <clase div="pie de página modal">
+        <button type="button" class="btn btn-secundario" data-bs-dismiss="modal"> Cerrar </button>
+        <button type="button" class="btn btn-primary" onclick="guardarProducto()"> Guardar </button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+    
+    $.ajax(
+      {
+            type:"get",
+            url:"http://apissistemas2.com/api/v1/productos",
+            data: {código: $("#txtCodigo").val(),nombre: $("txtNombre").val()},
+            success:function(response)
+                {
+
+                    $("#nuevoProducto").modal("ocultar")
+                  
+                }
+          }
+    );
+
+  </script>
