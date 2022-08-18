@@ -38,8 +38,8 @@ class ProductosController extends Controller
         $response = new \stdClass();
 
         $producto = new Producto();
+        $producto->id_producto=$request->id_producto;
         $producto->nombre=$request->nombre;
-        $producto->descripción=$request->descripción;
         $producto->save();
 
 
@@ -54,8 +54,8 @@ class ProductosController extends Controller
         $response = new \stdClass();
 
         $producto = producto::find($id_producto);
+        $producto->id_producto=$request->id_producto;
         $producto->nombre=$request->nombre;
-        $producto->descripción=$request->descripción;
         $producto->save();
 
         $response->data = $producto;
@@ -69,15 +69,17 @@ class ProductosController extends Controller
 
         $producto = producto::find($id_producto);
 
+        if($producto->id_producto!=null)
+        {
+            $producto->id_producto=$request->id_producto;
+        }
+
         if($producto->nombre!=null)
         {
             $producto->nombre=$request->nombre;
         }
 
-        if($producto->descripción!=null)
-        {
-            $producto->descripción=$request->descripción;
-        }
+        $categoria-<save();
         
         $response->data = $producto;
         $response->success=true;
