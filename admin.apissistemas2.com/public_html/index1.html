@@ -6,9 +6,20 @@
 	<title></title>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+	<style type="text/css">
+		
+		.mytable
+		{
+			border: 1px;
+			border-color: black;
+			border-style: solid;
+		}
+	</style>
 </head>
 <body>
-<table id="tproductos">
+
+<table class="mytable" id="tproductos">
 		<thead>
 			<th>CODIGO</th>
 			<th>NOMBRE</th>
@@ -28,18 +39,18 @@
 
 
 	<script type="text/javascript">
-		
+
 		var table1=$("#tproductos");
 
-		$('#tproductos').append('<tr><td>C003</td><td>C004</td></tr>');
-		$('#tproductos').append('<tr><td>C003</td><td>C004</td></tr>');
-		$('#tproductos').append('<tr><td>C003</td><td>C004</td></tr>');
-		$('#tproductos').append('<tr><td>C003</td><td>C004</td></tr>');
-		$('#tproductos').append('<tr><td>C003</td><td>C004</td></tr>');
+		$('#tproductos tr:last').after('<tr><td>C003</td><td>C004</td></tr>');
+		$('#tproductos tr:last').after('<tr><td>C003</td><td>C004</td></tr>');
+		$('#tproductos tr:last').after('<tr><td>C003</td><td>C004</td></tr>');
+		$('#tproductos tr:last').after('<tr><td>C003</td><td>C004</td></tr>');
+		$('#tproductos tr:last').after('<tr><td>C003</td><td>C004</td></tr>');
 
+		
 
-
-
+		
 	</script>
 
 

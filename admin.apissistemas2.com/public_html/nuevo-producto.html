@@ -1,4 +1,4 @@
-<div id="nuevaCategoria" class="modal">
+<div id="nuevoProducto" class="modal">
   <div class="modal-dialog">
     <div class="modal-content">
       
@@ -6,31 +6,17 @@
         <h5 class="modal-title" id="exampleModalLabel">Nuevo Producto</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-  
-        <form class="row g-3 needs-validation" novalidate>
-    
+      
       <div class="modal-body">
         
-  
-          <input type="hidden" name="ID" id="ID">
         <div class="row">
             <div class="col-12">
               <label for="txtCodigo" class="form-label">Codigo</label>
-              <input type="text" class="form-control" id="txtCodigo" placeholder="Ingrese codigo" required>
-              <div class="valid-feedback">
-                ok
-              </div>
-               <div class="invalid-feedback">
-                Ingrese el código
-              </div>
+              <input type="text" class="form-control" id="txtCodigo" placeholder="Ingrese codigo">
             </div>
             <div class="col-12">
               <label for="txtNombre" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="txtNombre" placeholder="Ingrese nombre" required>
-
-              <div class="invalid-feedback">
-                Ingrese el nombre
-              </div>
+              <input type="text" class="form-control" id="txtNombre" placeholder="Ingrese nombre">
             </div>
         </div>
 
@@ -39,103 +25,28 @@
       
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button class="btn btn-primary" type="submit">Guardar</button>
+        <button type="button" class="btn btn-primary" onclick="guardarProducto()">Guardar</button>
       </div>
-    </form>
-
+      
     </div>
   </div>
 </div>
 
 
 <script type="text/javascript">
-
-
-(function () {
-  'use strict'
-
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.querySelectorAll('.needs-validation')
-
-  console.log(forms);
-
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-
-      console.log(form);
-
-      form.addEventListener('submit', function (event) {
-
-        console.log("validacion");
-
-        if (form.checkValidity()) {
-          
-          guardarProducto();
-        }
-
-        event.preventDefault();
-        event.stopPropagation();
-
-        form.classList.add('was-validated')
-      }, false)
-    })
-})();
-
-
-
-
   
  function guardarProducto()
  {
 
-  var ID=$("#ID").val();
-
-  if(ID)
-  {
-    $.ajax(
-      {
-        type:"put",
-        url:"http://apissistemas2.com/api/v1/productos"+ID,
-        data: {
-              codigo:$("#txtCodigo").val(),
-              nombre:$("#txtNombre").val()
-              },
-        success:function(response)
-            {
-            
-
-              window.FlashMessage.success('El producto se guardo correctamente');
-
-                $('#nuevoProducto').modal("hide");
-
-
-
-                recargarData();
-
-
-            }
-      }
-    );
-
-  }
-  else
-  {
-
-    $.ajax(
+  $.ajax(
       {
         type:"post",
         url:"http://apissistemas2.com/api/v1/productos",
-        data: {
-              codigo:$("#txtCodigo").val(),
-              nombre:$("#txtNombre").val()
-              },
+        data: {codigo:$("#txtCodigo").val(),nombre:$("#txtNombre").val()},
         success:function(response)
             {
             
-                window.FlashMessage.success('El producto se guardo correctamente');
-
-
+                
                 $('#nuevoProducto').modal("hide");
 
                 recargarData();
@@ -145,9 +56,6 @@
       }
     );
 
-  } 
-
-  
 
 
  }
