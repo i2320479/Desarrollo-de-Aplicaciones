@@ -6,73 +6,34 @@
 	<title></title>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script type="text/javascript" src="js/init.js"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+	<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
 <body>
+	<h1>MENU</h1>
 
-	<table id="tproductos">
-		<thead>
-			<th>CODIGO</th>
-			<th>NOMBRE</th>
-		</thead>
-		<tbody>
-			<tr>
-				<td>C001</td>
-				<td>NOMBRE 1</td>
-			</tr>
-			<tr>
-				<td>C002</td>
-				<td>NOMBRE 2</td>
-			</tr>
-		</tbody>
-	</table>
+	<ul class="nav">
+	  <li class="nav-item">
+	    <a class="nav-link active" aria-current="page" href="/productos/list-productos.html">Productos</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="#">Link</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="#">Link</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link disabled">Disabled</a>
+	  </li>
+	</ul>
 
-<script type="text/javascript">
-	
-	var i;
-
-	for(i=0;i<10;i++)
-	{
-		if(i==5)
-		console.log("numero "+i);
-	}
-
-	var resp=suma(10,5);
-
-	var resp=suma(10,5);
-
-	var resp=suma(10,5);
-
-	//document.write("hola mundo cruel");
-
-	var tabla1,tbody1;
-
-	tabla1=document.getElementById("tproductos");
-
-	tbody1=tabla1.children[1];
-
-	tbody1.innerHTML=tbody1.innerHTML+"<td>C003</td><td>NOMBRE 3</td>";
-	tbody1.innerHTML=tbody1.innerHTML+"<td>C004</td><td>NOMBRE 4</td>";
-	tbody1.innerHTML=tbody1.innerHTML+"<td>C005</td><td>NOMBRE 5</td>";
-	tbody1.innerHTML=tbody1.innerHTML+"<td>C006</td><td>NOMBRE 6</td>";
-	tbody1.innerHTML=tbody1.innerHTML+"<td>C007</td><td>NOMBRE 7</td>";
-	tbody1.innerHTML=tbody1.innerHTML+"<td>C008</td><td>NOMBRE 8</td>";
-	tbody1.innerHTML=tbody1.innerHTML+"<td>C009</td><td>NOMBRE 9</td>";
-	tbody1.innerHTML=tbody1.innerHTML+"<td>C0010</td><td>NOMBRE 10</td>";
-	tbody1.innerHTML=tbody1.innerHTML+"<td>C0011</td><td>NOMBRE 11</td>";
-	tbody1.innerHTML=tbody1.innerHTML+"<td>C0012</td><td>NOMBRE 12</td>";
-
-	console.log(tbody1.innerHTML);
-
-	//console.log(document.getElementById("tproductos").children[1])
-
-
-	function suma(a,b)
-	{
-		return a+b;
-	}
-
-</script>
 
 </body>
 </html>
